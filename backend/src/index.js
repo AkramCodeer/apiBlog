@@ -14,12 +14,12 @@ const fs = require('fs');
 const salt = bcrypt.genSaltSync(10);
 const secret = 'asdfe45we45w345wegw345werjktjwertkj';
 
-app.use(cors({credentials:true,origin:'https://blogmadebyakram.netlify.app/'}));
+app.use(cors({credentials:true,origin:'http://localhost:3000/'}));
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
-mongoose.connect('mongodb+srv://rikkikhan16122000:1612@cluster0.cgxv1mb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
+mongoose.connect('//Enter Your MOngoDb uRL');
 
 app.post('/register', async (req,res) => {
   const {username,password} = req.body;
